@@ -3,7 +3,7 @@ import {Layout, LayoutMobile} from '../components/layout'
 import { useState, useEffect } from 'react';
 import {Company_Dashboard, Company_Dashboard_Mobile} from './index'
 
-function getWindowSize(){
+function GetWindowSize(){
   const [width, setWidth] = useState(null)
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
     setWidth(window.innerWidth);
   }
 
-  const isMobile = getWindowSize() <= 1200;
+  const isMobile = GetWindowSize() <= 1200;
   return (
     isMobile ? 
       <LayoutMobile>

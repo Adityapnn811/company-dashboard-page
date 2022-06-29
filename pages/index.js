@@ -61,7 +61,7 @@ function Company_Dashboard_Mobile(){
           </Card>
           <Card className={"col-span-1 bg-white my-4"} title="Aktivitas">
             {logData.map((object) => (
-              <LogCard className={"flex flex-col"} text={object.text} hari={object.hari} jam={object.jam}></LogCard>
+              <LogCard key={object.text} className={"flex flex-col"} text={object.text} hari={object.hari} jam={object.jam}></LogCard>
             ))}
           </Card>
         </div>
@@ -109,7 +109,7 @@ export default function Company_Dashboard() {
             </div>
             <Card className={"col-span-1 bg-white"} title="Aktivitas">
               {logData.map((object) => (
-                <LogCard className={"flex flex-col"} text={object.text} hari={object.hari} jam={object.jam}></LogCard>
+                <LogCard key={object.text} className={"flex flex-col"} text={object.text} hari={object.hari} jam={object.jam}></LogCard>
               ))}
             </Card>
           </div>

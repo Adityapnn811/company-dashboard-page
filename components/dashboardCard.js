@@ -63,16 +63,16 @@ function ProfileCard({className}){
                 {data.map(({title, data}) => {
                     if (title === "Status Perusahaan"){
                         return (
-                            <li className="flex flex-col justify-left items-start ml-3 mb-3">
+                            <li key={title} className="flex flex-col justify-left items-start ml-3 mb-3">
                                 <p className="text-slate-500 mb-1">{title}</p>
                                 <div className="flex flex-row w-full">
                                     <p className={`text-tertiary font-bold w-3/4 ${data ? "text-tertiary" : "text-red-900"}`}>{data ? "Aktif" : "Tidak Aktif"}</p>
                                     <div className="w-1/4 self-end">
-                                        <label for="checked-toggle" class="inline-flex relative items-center cursor-pointer">
-                                            {data ? <input type="checkbox" value={data} onClick={handleSetStatus} id="checked-toggle" class="sr-only peer" checked/> : 
-                                            <input type="checkbox" value={data} onClick={handleSetStatus} id="checked-toggle" class="sr-only peer"/>}
-                                            <input type="checkbox" value={data} onClick={handleSetStatus} id="checked-toggle" class="sr-only peer"/>
-                                            <div class="w-11 h-6 bg-tertiary rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-tertiary"></div>
+                                        <label htmlFor="checked-toggle" className="inline-flex relative items-center cursor-pointer">
+                                            {data ? <input type="checkbox" value={data} onClick={handleSetStatus} id="checked-toggle" className="sr-only peer" checked/> : 
+                                            <input type="checkbox" value={data} onClick={handleSetStatus} id="checked-toggle" className="sr-only peer"/>}
+                                            <input type="checkbox" value={data} onClick={handleSetStatus} id="checked-toggle" className="sr-only peer"/>
+                                            <div className="w-11 h-6 bg-tertiary rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-tertiary"></div>
                                         </label>
                                     </div>
                                 </div>
@@ -80,28 +80,28 @@ function ProfileCard({className}){
                         )
                     } else if (title === "E-mail"){
                         return (
-                            <li className="flex flex-col justify-left items-start mb-3 ml-3">
+                            <li key={title} className="flex flex-col justify-left items-start mb-3 ml-3">
                                 <p className="text-slate-500 mb-1">{title}</p>
                                 <p className="text-tertiary underline"><a><Image src={mail} width={15} height={15} /> {data}</a></p>
                             </li>
                         )
                     } else if (title === "No. Telp"){
                         return (
-                            <li className="flex flex-col justify-left items-start mb-3 ml-3">
+                            <li key={title} className="flex flex-col justify-left items-start mb-3 ml-3">
                                 <p className="text-slate-500 mb-1">{title}</p>
                                 <p className="text-tertiary underline"><a><Image src={phone} width={15} height={15} /> {data}</a></p>
                             </li>
                         )
                     } else if (title === "Situs Web"){
                         return (
-                            <li className="flex flex-col justify-left items-start mb-3 ml-3">
+                            <li key={title} className="flex flex-col justify-left items-start mb-3 ml-3">
                                 <p className="text-slate-500 mb-1">{title}</p>
                                 <p className="text-tertiary underline"><a href={data}><Image src={internet} width={15} height={15} /> {data}</a></p>
                             </li>
                         )
                     }
                     return (
-                        <li className="flex flex-col justify-left items-start mb-3 ml-3">
+                        <li key={title} className="flex flex-col justify-left items-start mb-3 ml-3">
                             <p className="text-slate-500 mb-1">{title}</p>
                             <p className="text-black">{data}</p>
                         </li>
